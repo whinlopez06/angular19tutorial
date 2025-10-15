@@ -1,0 +1,11 @@
+
+
+@if (!isShowMore) {
+    <!-- <p>{{ text.substring(0, minCharToShow )}} ...</p> -->
+     <p>{{ text | slice:0:minCharToShow}} ...</p>
+} @else {
+    <p>{{ text }}</p>
+}
+<button class="btn btn-info" (click)="isShowMore = !isShowMore">{{isShowMore ? 'Show less' : 'Show more'}}</button>
+
+

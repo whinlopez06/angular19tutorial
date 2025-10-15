@@ -1,0 +1,57 @@
+
+<h2>Data binding page</h2>
+<hr>
+<button class="btn btn-success" (click)="navigatetoAdmin()" >Go to Admin</button>
+<div class="row">
+    
+    <div class="col-6">
+        1. Interpolation
+        <p>firstName => {{ firstName }}</p>
+
+        <div>
+            {{ rollNo }}
+        </div>
+        <span>{{ isActive }}</span>
+    </div>
+
+    <div class="col-6">
+        Property binding
+        <input type="text"  [value]="firstName" name="" id="" >
+        <br>
+        <input type="text" [placeholder]="myPlaceHolder" name="" id="" >
+        <br>
+        <div [class]="div1ClassName" style="height: 100px; width: 100px;"></div>
+    </div>
+
+</div>
+
+<div class="row">
+    Event binding
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcomeMessage()">Show welcome text</button>
+    </div>
+    <div class="col-3">
+        <select #myDropdown (change)="onCityChanges(myDropdown.value)">
+            <option value="Manila">Manila</option>
+            <option value="Quezon City">Quezon City</option>
+            <option value="Bulacan">Bulacan</option>
+            <option value="Caloocan City">Caloocan City</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    Two way data binding
+    <div class="col-3">
+        <input type="text" [(ngModel)]="firstName">
+    </div>
+    <div class="col-3">
+        <select [(ngModel)]="selectedCity" >
+            <option value="Manila">Manila</option>
+            <option value="Quezon City">Quezon City</option>
+            <option value="Bulacan">Bulacan</option>
+            <option value="Caloocan City">Caloocan City</option>
+        </select>
+        - {{ selectedCity }}
+    </div>
+</div>

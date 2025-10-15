@@ -1,0 +1,14 @@
+{
+  "/miniproxy": {
+    "target": "https://freeapi.miniprojectideas.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": { "^/miniproxy": "" }
+  },
+    "/projectapi": {
+    "target": "https://projectapi.gerasim.in",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": { "^/projectapi": "" }
+  }
+}

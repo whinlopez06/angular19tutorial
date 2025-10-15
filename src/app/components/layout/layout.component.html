@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="admin">Angular 19</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="/dataBinding">Data Binding</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+            Directive
+          </a>
+          <ul class="dropdown-menu" aria-label="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/ng-class">Ng Class</a></li>
+            <li><a class="dropdown-item" routerLink="ng-if">Ng If</a></li>
+            <li><a class="dropdown-item" routerLink="ng-for">Ng For</a></li>
+            <li><a class="dropdown-item" routerLink="ng-style">Ng Style</a></li>
+            <li><a class="dropdown-item" routerLink="control-flow">Control Flow</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+            Signal
+          </a>
+          <ul class="dropdown-menu" aria-label="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="signal">Signal</a></li>
+            <li><a class="dropdown-item" routerLink="Linked-signal">Linked signal</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+            Forms
+          </a>
+          <ul class="dropdown-menu" aria-label="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="template-form">Template-form</a></li>
+            <li><a class="dropdown-item" routerLink="reactive-form">Reactive-form</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+            API Call
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="get-api">GET-api</a></li>
+            <li><a class="dropdown-item" routerLink="post-api">POST-api</a></li>
+            <li><a class="dropdown-item" routerLink="customer">customer</a></li>
+            <li><a class="dropdown-item" routerLink="">DELETE-api</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="resource-api">Resource API</a>
+        </li>
+
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="life-cycle">Life Cycle</a>
+        </li>
+
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="crud-localstorage">CRUD LS</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+            Re-usable
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="show-less-more">Show less more</a></li>
+            <li><a class="dropdown-item" routerLink="my-table">My Card</a></li>
+            <li><a class="dropdown-item" routerLink="">My Table</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      <form class="d-flex">
+        <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
+        <button class="btn btn-success" type="button" (click)="onLogOut()">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

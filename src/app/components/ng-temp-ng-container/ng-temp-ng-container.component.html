@@ -1,0 +1,68 @@
+<h2>ng-temp-ng-container page</h2>
+
+<hr>
+<div class="row">
+    <!-- <div class="col-3">
+        <select>
+            <option *ngFor="let employee of employeeArray" [value]="employee.name">
+                {{employee.name}} - {{employee.city}}
+            </option>
+        </select>
+    </div> -->
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Row No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Mobile No</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="isLoader">
+                    <!-- structural directive -->
+                    <!-- <ng-container *ngTemplateOutlet="tempLoader">
+                    </ng-container> -->
+                    <div [ngTemplateOutlet]="tempLoader"></div>
+                </ng-container>
+                <ng-container *ngIf="!isLoader">
+                    <tr *ngFor="let employee of employeeArray; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.city}}</td>
+                        <td>{{employee.contactNo}}</td>
+                        <td>
+                            <h4 *ngIf="employee.isActive else tempDeactive">Active</h4>
+                        </td>
+                    </tr>
+                </ng-container>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #tempLoader>
+    <tr>
+        <td colspan="4" class="text-align">
+            <div class="spinner-border text-muted"></div>
+            <div class="spinner-border text-primary"></div>
+            <div class="spinner-border text-success"></div>
+            <div class="spinner-border text-info"></div>
+            <div class="spinner-border text-warning"></div>
+            <div class="spinner-border text-danger"></div>
+            <div class="spinner-border text-secondary"></div>
+            <div class="spinner-border text-dark"></div>
+            <div class="spinner-border text-light"></div>  
+        </td>
+    </tr>
+</ng-template>
+
+<ng-template #tempDeactive>
+    <div class="text-danger">
+        <span>De-Active</span>
+    </div>
+</ng-template>
+

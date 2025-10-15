@@ -1,0 +1,28 @@
+<h2>Life Cycle page</h2>
+<hr>
+
+<div class="row">
+    <div class="col-8">
+        <app-my-card [cardTitle]="sampleCardTitle" [htmlTemplate]="myTemp">
+        </app-my-card>
+    </div>
+    <div class="col-4">
+        <app-my-card [cardTitle]="sampleCardTitle" [htmlTemplate]="myTemp2">
+        </app-my-card>
+    </div>
+</div>
+
+
+<ng-template #myTemp>
+    <app-my-ul [itemList]="cityList"></app-my-ul>
+
+    <app-tabs [tabList]="cityList"></app-tabs>
+    <app-my-button> 
+        <i class="fa fa-user"></i> Add User 
+    </app-my-button>
+    <app-show-less-more [text]="sampletext" [minCharToShow]="20"></app-show-less-more>
+</ng-template>
+
+<ng-template #myTemp2>
+    <app-my-table [colArray]="tableHeader" [gridDataList]="userList"></app-my-table>
+</ng-template>

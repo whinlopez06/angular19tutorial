@@ -1,0 +1,88 @@
+<h2>Customer page</h2>
+<hr>
+<!-- <div class="row p-3">
+    <div class="col-4">
+        <app-progress-bar></app-progress-bar>
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="col-12 text-center">
+        <app-tabs [tabList]="customerTabs"></app-tabs>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h4>Customer List</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Row no</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>City</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of customerArray; track $index) {
+                            <tr>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.customerName}}</td>
+                                <td>{{item.mobileNo}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.customerCity}}</td>
+                                <td>
+                                    <button class="btn btn-success me-2" (click)="onEditCustomer(item)">Edit</button>
+                                    <button class="btn btn-danger" >Delete</button>
+                                </td>
+                                
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h4>New Customer Form</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Name</label>
+                        <input type="text" [(ngModel)]="customerObject.customerName" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">City</label>
+                        <input type="text" [(ngModel)]="customerObject.customerCity" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Mobile No</label>
+                        <input type="text" [(ngModel)]="customerObject.mobileNo" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Email</label>
+                        <input type="text" [(ngModel)]="customerObject.email" class="form-control">
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-6 text-center">
+                        <button class="btn btn-info">Reset</button>
+                    </div>
+                    <div class="col-6 text-center">
+                        <button class="btn btn-success" (click)="onSaveCustomer()">Save customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
